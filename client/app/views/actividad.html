@@ -1,0 +1,240 @@
+<div class="gap"></div>
+
+<div id="ficha-torneo" class="seccion fondo_gris">
+
+    <div class="contenedor_sec">
+
+	    <div class="wow fadeInDown">
+
+		    <div class="itemBox wow fadeInDown">
+
+				<div class="onTop"><i class="fa fa-calendar fa-fw fa-2x"></i></div>
+
+	            <div class="titulo">
+
+	            	<h2>{{competition.title}}</h2> 
+
+	           		<h4>{{competition.type}}</h4>
+
+	           	</div>
+
+			</div>	      
+
+	    </div>
+
+	    <div class="mini_gap"></div>
+
+		<div id="torneo-descripcion">
+
+			<div class="row">
+
+				<div class="col-md-6">
+
+					<div class="datos-generales">
+
+						<div class="wow fadeInLeft afiche">
+
+                            <img ng-src="http://images.collab-dev.com/600x400/smart/slam/{{competition.cover_photo}}">
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="panel-lateral col-md-6">
+
+					<div class="mini_gap"></div>
+
+					<div class="itemBox wow fadeInDown">
+
+						<div><i class="fa fa-clock-o fa-fw fa-2x"></i></div>
+
+                        <div>
+
+                        	<h4>{{competition.event_date | moment: 'dddd DD [de] MMMM'}}</h4> 
+
+                       		<h4><strong>{{competition.event_date | moment: 'HH:mm'}}</strong></h4>
+
+                       	</div>
+
+					</div>
+
+					<div class="mini_gap"></div>
+
+					<div class="itemBox wow fadeInDown">
+
+						<div><i class="fa fa-map-marker fa-fw fa-2x"></i></div>
+
+                        <div>
+
+                        	<h4><strong>{{competition.place}}</strong></h4> 
+
+                       		<h4>
+                       			<a href class="link2modal link_sin_color" data-toggle="modal" data-target="#modalMapa01">{{competition.location.formatted_address}}</a>
+                       		</h4>
+
+                       	</div>
+
+					</div>
+
+					<!-- Modal -->
+					<div class="modal fade" id="modalMapa01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<div class="modal-dialog">
+							<div class="modal-content">
+
+								<div class="modal-header">
+
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+									<h4 class="modal-title" id="myModalLabel">
+
+										<strong>{{competition.place}}</strong> | {{competition.location.formatted_address}}
+
+									</h4>
+
+								</div>
+
+								<div class="modal-body no_padding" ng-if="competition">
+						        	
+									<iframe ng-src="{{getMapSrc()}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+						        </div>
+
+						        <div class="modal-footer">
+
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+						    	</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="mini_gap"></div>
+
+                    
+                    <div  ng-repeat="invitado in competition.users">
+                        <div class="wow fadeInDown">
+                            <div class="itemBox">
+
+                                <i class="fa fa-user fa-fw fa-2x"></i>
+                                <h4> <strong>
+                                <a href class="link2modal link_sin_color"  data-toggle="modal" data-target="#invitado-{{invitado.id}}">
+                                    {{invitado.name}} {{invitado.lastname}}
+                                </a>
+                                </strong> </h4>
+                                <h4>{{invitado.place}}</h4>
+                            </div>
+                        </div>
+
+
+                             <!-- Modal -->
+                        <div class="modal fade" id="invitado-{{invitado.id}}" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title">
+                                            <strong>{{invitado.name}} {{invitado.lastname}}</strong> | {{invitado.place}}
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{invitado.cover_photo}}">
+                                        <div class="mini_gap"></div>
+                                        <p>{{invitado.about}}</p>
+                                        <p class="links" ng-if="invitado.google">
+                                            <i class="fa fa-caret-right fa-fw"></i>
+                                            <a class="link_simple" ng-href="{{invitado.google}}" target="_blank">
+                                                <strong>{{invitado.google}}</strong>
+                                            </a>
+                                        </p>
+                                        <p class="links">
+                                        <!--
+                                            <a href="https://twitter.com/{{invitado.twitter}}" class="link_simple fa fa-2x fa-facebook-square" target="_blank" ng-if="invitado.twitter"> 
+                                            </a> &nbsp;
+                                            <a href="https://www.facebook.com/{{invitado.facebook}}" class="link_simple fa fa-2x fa-twitter-square" target="_blank" ng-if="invitado.facebook"> 
+                                            </a> &nbsp;
+                                            <a href="https://www.instagram.com/{{invitado.instagram}}" class="link_simple fa fa-2x fa-instagram-square" target="_blank" ng-if="invitado.instagram"> 
+                                            </a> -->
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+					<div class="mini_gap"></div>
+
+					<div class="etiquetas">
+
+                    	<i class="fa fa-tag fa-2x fa-fw"></i>
+
+                    	<span class="etiqueta">{{competition.hashtag}}</span>
+
+
+                    </div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<div id="torneo_content">
+	
+	<!-- Nav tabs -->
+	<div class="tabs_lookeadas">
+	  	
+	  	<ul class="nav nav-tabs panel_selector" role="tablist">
+		    
+		    <li role="presentation" class="active"><a data-target="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab"><i class="fa fa-angle-right"></i> Info</a></li>
+
+		    <li role="presentation" ng-if="competition.rules"><a data-target="#tab_detalle" aria-controls="tab_videos" role="tab" data-toggle="tab"><i class="icon-angle-right"></i>Más Detalles</a></li>
+
+	  	</ul>
+
+  	</div>
+
+  	<!-- Tab panes -->
+  	<div class="tab-content contenedor_sec">
+    	<div role="tabpanel" class="tab-pane fade in active" id="tab_info">
+    		<div class="descripcion">
+				<p>
+                    {{competition.description}}
+				</p>
+			</div>
+
+			<div class="gap"></div>
+
+    	</div>
+
+	    <div role="tabpanel" class="tab-pane fade" id="tab_detalle">
+
+            <div class="descripcion">
+				<p>
+                    {{competition.rules}}
+				</p>
+			</div>
+
+			<div class="gap"></div>
+
+    	</div>
+
+
+  	</div>
+
+</div>
+
+

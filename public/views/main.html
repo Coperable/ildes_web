@@ -1,0 +1,930 @@
+
+<div id="sec_torneosAnteriores" class="seccion fondo_gris">
+
+    <div class="contenedor_sec">
+
+	    <div class="titulo wow fadeIn">
+
+	      	<h2 class="sombra_gris_blanco">
+	        	
+	        	<i class="fa fa-calendar"></i>ACTIVIDADES DESTACADAS
+	      	
+	      	</h2>
+	    
+	    </div>
+
+	    <div class="ver_mas wow bounceInRight entrada-1s">
+
+	    	<a class="link_simple" href="/#/actividades">
+
+	    		<h3><i class="fa fa-caret-right "></i>ver todas las Actividades</h3>
+	    	
+	    	</a>
+	    	
+	    </div>
+
+    	<div class="row width_90 wow fadeInLeftBig">
+
+    		<div class="col-xs-12 col-sm-5 col-md-4 container_tarj_act" ng-repeat="actividad in summary.competitions">
+
+    			<div class="tarjeta_actividad">
+
+    				<a ng-href="/#/actividad/{{actividad.id}}">
+    					
+    					<img ng-src="http://images.collab-dev.com/300x/smart/slam/{{actividad.cover_photo}}">
+
+    				</a>
+
+    				<div class="inner">
+	                 	
+	                    <a ng-href="/#/actividad/{{actividad.id}}">
+
+	                    	<h4 class="bold">{{actividad.title}}</h4>
+
+	                    </a>
+
+	                    <h5>{{actividad.description|words:10}}</h5>
+
+	                    <div class="etiquetas" ng-if="actividad.hashtag">
+
+	                    	<i class="fa fa-tag"></i>
+
+	                    	<span class="etiqueta">{{actividad.hashtag}}</span>
+
+	                    </div>
+
+	                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'dddd DD [de] MMMM'}} <br>
+	                    	<i class="fa fa-caret-right-o fa-fw"></i> <span style="font-size:14pt"><strong>{{actividad.event_date | moment: 'HH:mm'}}</strong></span></h5>
+
+	                    <h5><i class="fa fa-map-marker fa-fw alineado"></i><strong class="alineado">{{actividad.place}}</strong></h5>
+	                    <h5 class="segunda-ln"><i class="fa fa-angle-right-o fa-fw alineado"></i><span class="alineado"> {{actividad.location.formatted_address}}</span></h5>
+
+	                </div>
+
+            	</div>
+
+            </div>
+
+
+	    </div>
+
+	    <h4><strong><a href="" class="link_simple"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a></strong></h4>
+
+	    <div class="mini_gap"></div>
+
+	    <a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated" href="/#/actividades" role="button">VER TODAS</a>
+
+	    <div class="mini_gap" id="acerca_de_posicion"></div>
+
+	    <div class="mini_gap"></div>
+	
+	</div>
+
+</div>
+
+
+<!-- SEC: ACERCA DE -->
+<div id="about_menu">
+		
+	<div class="clear"></div>
+
+	<div class="wow fadeIn tabs_about sec-fondo-oscuro">
+		    
+	    <div class="mask">
+
+	      	<ul class="menu_tabs" role="tablist">
+
+		        <li class="active">
+
+		        	<a class="btn eventime_button graybtn active" data-toggle="tab" role="button" data-target="#sectionA">
+		        		ACERCA DE 
+		        	</a>
+
+		        </li>
+
+		        <li>
+
+		        	<a class="btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionB">
+		        		TEMAS 
+		        	</a>
+
+		        </li>
+
+		        <li>
+
+		        	<a class="btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionC">
+		        		PARTICIPA 
+		        	</a>
+
+		        </li>
+
+	      	</ul>
+
+	      	<div class="gap"></div>
+
+			<div class="tab-content">
+
+		        <div id="sectionA" class="tab-pane fade in active">
+
+		        	 <ul class="about_columns">
+
+		        	 	<li class="list right">
+
+		        	 		<h4 class="uppercase">Los sistemas de <strong>producción</strong>, <strong>distribución</strong> y <strong>consumo</strong> están cambiando, y nosotros con ellos.</h4>
+
+	        	 			<ol><li>
+
+        	 					Nuevos modelos de intercambio y tecnologías abren el juego y nos invitan a repensar cómo nos comunicamos, cómo aprendemos y cómo compartimos recursos de todo tipo. Siguiendo el modelo de producción del software libre, se generan formas de creación entre pares que proponen nuevos roles participativos. En ese horizonte cobra fuerza la idea de los comunes y del procomún, la riqueza compartida con independencia del mercado y del estado.
+
+	        	 			</li></ol>
+			            
+			            </li>
+
+			            <li class="list con_sangria">
+
+				            <h4><i class="fa fa-caret-right"></i>¿Qué significa hablar de economías colaborativas, y qué relación tienen con los comunes? </h4>
+
+				            <div class="mini_gap"></div>
+
+				            <h4><i class="fa fa-caret-right"></i>¿Por qué hablamos cada vez más de compartir?</h4>
+				            
+				            <div class="mini_gap"></div>
+
+				            <h4><i class="fa fa-caret-right"></i>¿Quiénes hablan hoy de economías colaborativas y qué modelo de vida nos proponen? </h4>
+
+				            <ol><li>
+
+				            </li></ol>
+				        
+				        </li>
+
+			        </ul>
+
+		        </div>
+
+			    <div id="sectionB" class="tab-pane fade">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h5>
+Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y difusión de contenidos libres, producción conjunta, intercambios entre pares, intercambios sin dinero y préstamos entre pares -entre otros nuevos y no tan nuevos sistemas colaborativos- se suman a experiencias específicamente cooperativas y solidarias, iniciativas para el rescate de los bienes comunes y la protección de un ambiente sustentable.
+
+                        </h5>
+                    </div>
+			          <ul class="about_columns">
+
+		        	 	<li class="list right">
+
+		        	 		<h4 class="uppercase">Inspirados tanto por prácticas ancestrales como por tecnologías innovadoras, <strong>nuevos conceptos</strong> toman el centro de la escena, en un entramado complejo de <strong>tendencias</strong> y <strong>cambios sociales</strong>.</h4>
+			            
+			            </li>
+
+			            <li class="list con_sangria">
+
+<h4><i class="fa fa-caret-right"></i>economías colaborativas </h4>
+<h4><i class="fa fa-caret-right"></i>cultura libre</h4>
+<h4><i class="fa fa-caret-right"></i>comunes </h4>
+<h4><i class="fa fa-caret-right"></i>producción de pares </h4>
+<h4><i class="fa fa-caret-right"></i>cultura cooperativa </h4>
+<h4><i class="fa fa-caret-right"></i>nuevos derechos </h4>
+<h4><i class="fa fa-caret-right"></i>tecnologías colaborativas </h4>
+<h4><i class="fa fa-caret-right"></i>abundancia </h4>
+<h4><i class="fa fa-caret-right"></i>comunidad </h4>
+<h4><i class="fa fa-caret-right"></i>cultura de red </h4>
+<h4><i class="fa fa-caret-right"></i>economías emergentes</h4>
+
+				            <ol><li>
+
+				            </li></ol>
+				        
+				        </li>
+
+			        </ul>
+
+			    </div>
+
+
+			    <div id="sectionC" class="tab-pane fade">
+
+			    	<ul class="about_columns">
+
+		        	 	<li class="list right">
+
+	        	 			<h4>
+
+        	 					Con el objetivo de visibilizar experiencias a nivel nacional e internacional y reflexionar sobre los desafíos de la cultura colaborativa, el <strong>Goethe-Institut</strong>, <strong>Minka</strong>, <strong>El Plan C</strong> y <strong>Cultura Senda</strong> te invitan a ser parte de <strong>“COMUNES. Los caminos de la colaboración”</strong>
+
+        	 				</h4>
+
+	        	 			<ol><li>
+
+	        	 			</li></ol>
+			            
+			            </li>
+
+			            <li class="list con_sangria">
+
+				            <h4 class="uppercase">Inscribite al evento completando el <a class="link_simple" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank"><strong> Formulario de registro</strong></a>.</h4>
+                            <h4>
+                            ¿Querés presentar tu trabajo? Además de participar en las charlas, debates y talleres te invitamos a presentar proyectos a través de una charla relámpago de 5 minutos. Para participar registrá tu iniciativa en este <a class="link_simple" href="https://docs.google.com/forms/d/16HKBxcP6TWLykeptljBTRygqP8VSoLwFvJNBNLDhKGM/edit" target="_blank"><strong> formulario</strong></a>. 
+                            </h4>
+                            <h4>
+                            Vení a vivir la colaboración ¡Sumate a la cobertura colaborativa! Formá parte del equipo de comunicación de este evento único: aprendé a realizar campañas en redes sociales, crear poéticas visuales, narrativas, hacer registros colectivos y mucho más. Inscribite en este formulario y sumate al equipo de trabajo coordinado por Facción Buenos Aires.                             </h4>
+                            <h4>
+                            ¡Te esperamos! Todas las actividades son con entrada libre y gratuita
+                            </h4>
+
+
+
+				            <div class="mini_gap"></div>
+				        
+				        </li>
+
+			        </ul>
+
+			    </div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<!-- SEC: INVITADOS -->
+<div id="sec_jugadores" class="seccion fondo_gris">
+
+    <div class="contenedor_sec">
+
+	    <div class="titulo wow fadeIn">
+
+	      	<h2 class="sombra_gris_blanco">
+
+	        	<i class="fa fa-users"></i>INVITADOS
+
+	      	</h2>
+
+	    </div>
+
+	    <div class="ver_mas wow bounceInRight entrada-1s">
+
+	    	<a class="link_simple" ng-href="/#/invitados">
+
+	    		<h3><i class="fa fa-caret-right"></i>ver todos los Invitados</h3>
+
+	    	</a>
+
+	    </div>
+
+    	<div class="row width_90">
+    		
+
+
+    		<div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="invitado in random_participants|limitTo:6">
+    			<div class="tarjeta_jugador wow fadeInLeft">
+    				<a class="link2modal"  href data-toggle="modal" data-target="#invitado-{{invitado.id}}">
+    					<img ng-src="http://images.collab-dev.com/300x320/smart/slam/{{invitado.cover_photo}}">
+    				</a>
+                	<div class="jug_resumen">
+                		<a class="link2modal" href data-toggle="modal" data-target="#invitado-{{invitado.id}}">
+                			<h4 class="bold">{{invitado.name}} {{invitado.lastname}}</h4>
+                		</a>
+                		<h5>{{invitado.place}}</h5>
+                		<p>{{invitado.about|words:10}}</p>
+					</div>
+				</div>
+
+				<!-- Modal -->
+				<div class="modal fade" id="invitado-{{invitado.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">
+									<strong>{{invitado.name}} {{invitado.lastname}}</strong> | {{invitado.place}}
+								</h4>
+							</div>
+							<div class="modal-body">
+                                <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{invitado.cover_photo}}">
+								<div class="mini_gap"></div>
+                                <p ng-bind-html="newlines(invitado.about)"></p>
+								<p class="links" ng-if="invitado.google">
+									<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" ng-href="{{invitado.google}}" target="_blank"><strong>{{invitado.google}}</strong></a>
+								</p>
+								<p class="links">
+
+							        <!--
+									<a href="https://twitter.com/{{invitado.twitter}}" class="link_simple fa fa-2x fa-facebook-square" target="_blank" ng-if="invitado.twitter"> </a> &nbsp;
+							        <a href="https://www.facebook.com/{{invitado.facebook}}" class="link_simple fa fa-2x fa-twitter-square" target="_blank" ng-if="invitado.facebook"> </a> &nbsp;
+									<a href="https://www.instagram.com/{{invitado.instagram}}" class="link_simple fa fa-2x fa-instagram-square" target="_blank" ng-if="invitado.instagram"> </a>-->
+						        </p>
+					        </div>
+
+					        <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+					    	</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<div class="mini_gap"></div>
+
+		<a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated entrada-0s5" href="/#/invitados" role="button">VER TODOS</a>
+
+	</div>
+
+</div>
+
+
+<!-- SEC: REGISTRO 
+<div id="planilla-registro" class="seccion planilla row" ng-show="!isAuthenticated()">
+    <div class="contenedor_sec">
+
+        <div class="col-lg-5 col-md-6" data-ng-controller="LoginCtrl">
+            <div class="titulo wow bounceInRight">
+                <h2 class="sombra_blanco_gris">
+                    <i class="fa fa-user"></i>INGRESA
+                </h2>
+                <p></p>
+                <p></p>
+            </div>
+            <div class="torneo-inner">
+                <a href class="contact_icon fa fa-facebook wow fadeInUp"  ng-click="authenticate('facebook')"> </a>
+                <a href class="contact_icon fa fa-twitter wow fadeInUp" ng-click="authenticate('twitter')"> </a>
+                <a href class="contact_icon fa fa-google-plus wow fadeInUp" ng-click="authenticate('google')"> </a>
+                <form method="post" ng-submit="login()" name="loginForm">
+                    <div class="form-group">
+                        <label for="email">email:</label>
+                        <input type="email" class="form-control" id="email" ng-model="email" placeholder="EMAIL">
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasenia">Contraseña:</label>
+                        <input type="password" class="form-control" id="contrasenia" ng-model="password" placeholder="***">
+                    </div>
+
+                    <div class="mini_gap"></div>
+
+                    <button type="submit" ng-disabled="loginForm.$invalid" class="wow bounceInLeft btn btn_principal btn-primary animated entrada-1s">INGRESAR</button>
+
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-lg-5 col-md-6" data-ng-controller="SignupCtrl">
+            <div class="titulo wow fadeInLeftBig">
+                <h2 class="sombra_blanco_gris">
+                    <i class="fa fa-user-plus"></i>REGISTRATE
+                </h2>
+                <p>¿Querés participar?</p>
+                <p><small>REGISTRATE PARA CREAR TU PERFIL Y PARTICIPA DE LAS ACTIVIDADES.</small></p>
+            </div>
+
+            <div class="torneo-inner">
+                <div class="row wow fadeInRightBig">
+                    <form method="post" ng-submit="signup()" name="signupForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Usuario:</label>
+                            <input type="text" class="form-control" ng-model="username" id="nombre" placeholder="APODO">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">email:</label>
+                            <input type="email" class="form-control" ng-model="email" id="email" placeholder="EMAIL">
+                        </div>
+                        <div class="form-group">
+                            <label for="contrasenia">Contraseña:</label>
+                            <input type="password" class="form-control" ng-model="password" id="contrasenia" placeholder="***">
+                        </div>
+                        <div class="form-group">
+                            <label for="contraseniaConf">Confirmar contraseña:</label>
+                            <input type="password" class="form-control" ng-model="confirmPassword" id="contraseniaConf" placeholder="***">
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Nombre:</label>
+                            <input type="text" class="form-control" ng-model="name" id="apellido" placeholder="APELLIDO">
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" class="form-control" ng-model="lastname" id="nombre" placeholder="NOMBRE">
+                        </div>
+                        <div class="checkbox wow fadeInLeft entrada-1s">
+                            <label>
+                                <input type="checkbox"> <span>Acepto los <a href="">Términos y condiciones</a> del servicio.</span>
+                            </label>
+                        </div>
+                        <div class="mini_gap"></div>
+                        <button type="submit" ng-disabled="signupForm.$invalid" class="wow bounceInRight btn btn_principal btn-primary animated entrada-1s btn-large">REGISTRARME</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+	</div>
+
+</div> -->
+
+
+<!-- SEC: INFORMACIÓN -->
+<div id="info01" class="info_seccion wow slideInRight">
+
+	<div class="info_contenedor wow bounceInRight entrada-0s5">
+
+		<h2><i class="fa fa-star"></i>COMUNES</h2>
+
+		<h3>Los caminos de la colaboración</h3>
+
+		<p>Se realiza en la antesala del simposio internacional “The Sharing Game. Exchange in Culture and Society” que el Goethe-Institut organiza en junio de 2016 en Weimar (Alemania) y forma parte de la programación argentina de la 3ra. Edición de la Semana de la Economía Colaborativa promovida por Minka.  </p>
+
+		<a style="visibility: visible; animation-name: fadeInUpBig;" class="wow fadeInUpBig btn animated" role="button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform">INSCRIBITE</a>
+
+	</div>
+
+    <div class="mini_gap"></div>
+
+</div>
+
+
+<!-- SEC: VIEDEO -->
+<div id="sec_videos" class="seccion fondo_gris">
+
+	<!--<div class="first_line wow fadeInDown"></div>-->
+
+    <div class="contenedor_sec">
+
+	    <div class="titulo wow fadeIn">
+
+	      	<h2 class="sombra_gris_blanco">
+	        	
+	        	<i class="fa fa-play-circle"></i>Videos
+	      	
+	      	</h2>
+	    
+	    </div>
+
+	    <div class="ver_mas wow bounceInRight entrada-1s5">
+
+	    	<a href="/#/videos" class="link_simple">
+
+	    		<h3><i class="fa fa-caret-right"></i>ver todos los videos</h3>
+	    	
+	    	</a>
+	    	
+	    </div>
+
+    	<div class="row">
+
+    		<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HoAi9jjm43w" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>Lala Deheinzelin</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KkZZlSHU8-E" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>Neal Gorenflo</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WtxNtG0FNTs" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>David de Ugarte</strong></h4>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated" href="/#/videos" role="button">VER TODOS</a>
+
+	</div>
+
+</div>
+
+
+
+<!-- SEC: APOYO -->
+<div id="sec_apoyo" class="seccion">
+
+    <div class="contenedor_sec">
+
+	    <div class="titulo wow fadeIn">
+
+	      	<h2 class="sombra_gris_blanco">
+
+	        	<i class="fa fa-users"></i>APOYOS
+
+	      	</h2>
+
+	    </div>
+
+	    <div class="gap"></div>
+
+    	<div class="top_line logos width_90">
+
+    		<h4>Organizan: </h4>
+
+    		<div class="row logos v-center wow fadeInLeftBig">
+
+    			<div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://www.goethe.de/buenosaires"><img class="width_60" src="/images/LOGO-goethe.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://www.minka.me/"><img src="/images/LOGO-Minka.png"></a>
+
+                </div>
+
+                <div class="col-xs-3 col-md-3">
+
+                    <a target="_blank" href="http://www.elplanc.net/"><img class="width_80" src="/images/LOGO-planC.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="www.facebook.com/culturasenda"><img src="/images/LOGO-CulturaSenda.png"></a>
+
+                </div>
+
+                <div class="col-xs-3 col-md-3">
+
+                    <a target="_blank" href="http://www.centrocultural.coop/"><img src="/images/LOGO-CCC.png"></a>
+
+                </div>
+
+    		</div>
+
+   			<div class="gap"></div>
+
+    	</div>
+
+
+    	<div id="apoyan" class="top_line width_90 ">
+
+    		<h4>Apoyan: </h4>
+
+    		<div class="row logos v-center wow fadeInLeftBig">
+
+    			<div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://www.lausinacultura.com.ar/"><img src="/images/LOGO-Usina.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://www.ccmatienzo.com.ar/"><img class="width_80" src="/images/LOGO-Matienzo.png"></a>
+
+                </div>
+
+                <div class="col-xs-3 col-md-3">
+
+                    <a target="_blank" href="http://www.cceba.org.ar/"> <img class="width_80" src="/images/LOGO-CEEBA.jpg"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://recursosculturales.com/"><img class="width_90" src="/images/LOGO-Recursos.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://coperable.org"><img class="width_90" src="/images/LOGO-Coperable.png"></a>
+
+                </div>
+
+                <div class="col-xs-1 col-md-1">
+
+                </div>
+
+            </div>
+
+            <div class="row logos v-center wow fadeInLeftBig">
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://www.akapachachascomus.com.ar/"><img class="width_80" src="/images/LOGO-Akapacha.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://faccionlatina.org/"><img class="width_80" src="/images/LOGO-Faccion.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="www.facebook.com/hospedacultura"><img src="/images/LOGO-HospedaCultura.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="https://www.facebook.com/PopUpNetworking/?pnref=lhc"><img class="width_80" src="/images/LOGO-POPUP.png"></a>
+
+                </div>
+
+                <div class="col-xs-3 col-md-3">
+
+                    <a target="_blank" href="http://semana.minka.me/"><img src="/images/LOGO-SEC.png"></a>
+
+                </div>
+
+                <div class="col-xs-1 col-md-1">
+
+                </div>
+
+    		</div>
+
+    		<div class="mini_gap"></div>
+
+   		</div-->
+
+   		<div class="gap"></div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- Modal HTML 
+<div id="myModal" class="modal fade eventime_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        &times; </button>
+        <h4 class="modal-title">
+        Jeremy Crackevich </h4>
+        <small>
+        Featured guest </small>
+      </div>
+      <div class="modal-body">
+        <img src="images/featured_speaker.jpg" alt="img10"/>
+        <p>
+          <br>
+           Crackevich's influence on contemporary graphic design is unparalleled. <br>
+           This outstanding expert and self-named typomaniac is responsible for numerous custom and redesigned typefaces and font identities for world-renowned corporations. Moreover, he has created dozens of commercial typefaces which are considered to be modern classics of typography. <br>
+           In 1979, he founded CrackevichDesign - German mega-firm providing global design consultancy. The success of this company can be measured by a long list of the most relevant prizes including multiple red dot awards and European Design Awards. <br>
+          <br>
+           More about Jeremy Crackevich can be found <a href="#">here</a>.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="contact_icon fa fa-facebook graybtn graytxt">
+        </a>
+        <a href="#" class="contact_icon fa fa-twitter graybtn graytxt">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="reservation_menu" class="wow fadeIn">
+  <div class="reservation">
+    <div class="gap">
+    </div>
+    <div class="first_line">
+    </div>
+    <div class="titulo">
+      <p>
+         Registrate
+      </p>
+    </div>
+    <div class="first_description">
+      <p>
+         Vestibulum aliquet urna sapien, et condimentum ex efficitur vitae. Etiam lacinia nunc id risus semper, vitae sagittis tellus condimentum. 
+      </p>
+    </div>
+    <form id="reservation_form" action="#">
+      <input class="wow fadeInDown" type="hidden" name="action" value="sendbooking">
+      <input class="wow fadeInDown" name="first_name" type="text" id="make_a_reservation_input_1" placeholder="Nombre">
+      <input class="wow fadeInDown" name="last_name" type="text" id="make_a_reservation_input_2" placeholder="Apellido">
+      <input class="wow fadeInDown" name="last_name" type="text" id="make_a_reservation_input_2" placeholder="Nombre de Usuario">
+      <input class="wow fadeInDown" name="last_name" type="text" id="make_a_reservation_input_2" placeholder="Contraseña">
+      <input class="wow fadeInDown" name="email" type="text" id="make_a_reservation_input_3" placeholder="Email">
+      <input class="wow fadeInDown" name="address" type="text" id="make_a_reservation_input_4" placeholder="Localidad">
+      
+      
+      <input class="wow fadeInDown" name="zip" type="text" id="make_a_reservation_input_5" placeholder="Zip Code">
+      <input class="wow fadeInDown" name="telephone" type="text" id="make_a_reservation_input_6" placeholder="Phone">
+      
+      <input class="wow fadeInDown" name="price" type="radio" value="Type 1" id="radio01"/>
+      <label class="wow fadeInUp" for="radio01">
+      <span>
+      $1350 </span>
+      The Big Ticket gets you into all five days of HOW Design Live and includes all sessions, workshops, keynotes and networking events. </label>
+      <input name="price" value="Type 2" type="radio" id="radio02"/>
+      <label class="wow fadeInUp" for="radio02">
+      <span>
+      $800 </span>
+      Two-Day Registration. Can’t make the full four days of Design Days Conference, but have more time than just a day? Choose a two-day. </label>
+      <input name="price" value="Type 3" type="radio" id="radio03"/>
+      <label class="wow fadeInUp" for="radio03">
+      <span>
+      $350 </span>
+      One-Day Registration. Choose to customize a time frame that works best for you. You’ll still get to choose from every single session. </label>
+      <input name="price" value="Type 4" type="radio" id="radio04"/>
+      <label class="wow fadeInUp" for="radio04">
+      <span>
+      $5000 </span>
+      Registering 5 or more from your company? The Group Big Ticket gets each member of your group into all four days of Design Days Conference. </label>
+      
+
+      <input type="submit" value="registrate" class="reservation_button wow fadeInDown" role="button">
+      </br>
+      <p style="text-align:center"></br>
+      	<span>¿ya eres usuario?</span>
+      </p>
+      <input type="submit" value="Ingresar" class="reservation_button wow fadeInDown" role="button">
+      <p style="text-align:center">¿olvidaste la contraseña?</p>
+      
+
+      <div class="clear">
+      </div>
+      <div id="contactMsg" class="wow fadeInUp">
+      </div>
+    </form>
+    <div class="gap">
+    </div>
+  </div>
+</div>
+<!-- End Reservation -->
+
+
+
+<!-- Contact -->
+<div id="contact_menu" class="wow fadeIn">
+  <div class="contact">
+    <div class="mask">
+
+	 	<div class="titulo wow fadeIn">
+
+	      	<h2 class="contacto_tit">
+	        	
+	        	<i class="fa fa-user-plus"></i>CONTACTO
+	      	
+	      	</h2>
+      <div class="first_description">
+        <p>
+           El encuentro ¨Comunes. Los caminos de la colaboración¨ tiene lugar en varios espacios de Buenos Aires, elegidos para mostrar diversas experiencias y modelos de gestión en colaboración, descentralizar las actividades y facilitar el intercambio con iniciativas diversas.
+        </p>
+      </div>
+      <div class="mini_gap">
+      </div>
+      
+      <!--
+      <div id="map">
+      </div>
+      -->
+      
+      <div class="contact_information">
+        
+        <h6 class="wow fadeIn">LOCALES</h6>
+
+        <h4><strong>Centro Cultural de la Cooperación Floreal Gorini</strong></h4>
+        <h4><i class="fa fa-map-marker"></i> Av. Corrientes 1543, Buenos Aires</h4>
+
+        <p class="wow fadeIn">
+
+           Un espacio para el desarrollo de una intelectualidad crítica, con orientación anticapitalista, afirmada en los principios y valores de la cooperación.<br>
+
+           <a href="www.centrocultural.coop/"><i class="fa fa-caret-right"></i>www.centrocultural.coop/</a> 
+        
+        </p>
+
+       	<div class="mini_gap"></div>
+
+        <h4><strong>Club Cultural Matienzo</strong></h4>
+        <h4><i class="fa fa-map-marker"></i> Pringles 1249, Buenos Aires</h4>
+
+        <p class="wow fadeIn">Club Cultural Matienzo es un espacio, un equipo productor de contenidos culturales, y un proyecto independiente de arte, cultura y sociedad. Desde 2008, un equipo de actualmente 80 personas gestionamos Matienzo en forma colectiva, organizados en áreas de trabajo vinculadas entre sí. A través de ellas creamos y/o producimos actividades y proyectos que tienen lugar tanto en nuestro espacio como fuera y más allá de él.<br>
+
+           <a target="_blank" href="http://ccmatienzo.com.ar/wp/"><i class="fa fa-caret-right"></i>http://ccmatienzo.com.ar</a> 
+        
+        </p>
+
+       	<div class="mini_gap"></div>
+
+        <h4><strong>Punto de encuentro</strong></h4>
+        <h4><i class="fa fa-map-marker"></i> Pringles 1249, Buenos Aires</h4>
+
+        <p class="wow fadeIn">De jueves a sábado, a partir de las 20 hs nos reunimos en la Terraza del Club Cultural Matienzo, un espacio ideal para  compartir comidas caseras, cervezas y tragos. Acercate y compartí con nuestros invitados, amigos y colaboradores.
+        </p>
+
+      </div>
+      
+      <div class="contact_information">
+      
+
+        <b class="wow fadeIn">
+            Producción general y programación:
+        </b>
+        <p class="wow fadeIn">
+            Adriana Benzaquen (Minka/ Cultura Senda), Marcela Basch (El plan C), Carla Imbrogno y Uwe Mohr (Goethe-Institut)
+        </p>
+        
+        <b class="wow fadeIn">Producción ejecutiva:</b>
+        <p class="wow fadeIn">
+            Adriana Benzaquen
+        </p>
+
+        <b class="wow fadeIn">
+            Asistente de producción:
+        </b>
+        <p class="wow fadeIn">
+            Kevin Liendo 
+        </p>
+
+        <b class="wow fadeIn">
+            Equipo de colaboradores: 
+        </b>
+        <p class="wow fadeIn">
+            Melisa Cañas, Julián López, Facción Prensa: Belén Charpentier 
+        </p>
+        <b class="wow fadeIn">
+            Redes sociales: 
+        </b>
+        <p class="wow fadeIn">
+            Ma. José Giovo (Facción) y Patricio Imbrogno (Goethe-Institut) 
+        </p>
+        <b class="wow fadeIn">
+            Registro y Cobertura colaborativa: 
+        </b>
+        <p class="wow fadeIn">
+            Facción Buenos Aires 
+        </p>
+        <b class="wow fadeIn">
+            Diseño gráfico: 
+        </b>
+        <p class="wow fadeIn">
+            Julián López- PopUp Colombia 
+        </p>
+        <b class="wow fadeIn">
+            Web: 
+        </b>
+        <p class="wow fadeIn">
+            Coperable.org 
+        </p>
+
+        <b class="wow fadeIn">
+            Contacto:
+        </b>
+        <p class="wow fadeIn">
+            info@encuentrocomunes.com
+        </p>
+
+
+      </div>
+      <div class="mini_gap">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="scripts/minify.js"></script>

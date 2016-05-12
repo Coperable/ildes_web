@@ -1,0 +1,174 @@
+<div class="gap"></div>
+
+<div id="ficha-torneo" class="seccion fondo_gris">
+
+    <div class="contenedor_sec torneo_info_inside">
+	    <div class="titulo wow fadeInDown">
+	      	<h2 class="sombra_gris_blanco">
+	        	<i class="icon-copa"></i>Torneo
+	      	</h2>
+	    </div>
+
+		<div id="torneo-descripcion">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="datos-generales">
+						<h1 class="wow fadeInLeft">{{competition.title}}</h1>
+						<div class="wow fadeInLeft afiche">
+                            <img ng-src="http://images.collab-dev.com/490x/smart/slam/{{competition.cover_photo}}">
+						</div>
+					</div>
+				</div>
+
+				<div class="panel-lateral col-md-4">
+					<div class="fecha wow fadeInDown">
+						<span class="icono" ><i class="fa fa-clock-o"></i></span>
+                        <span class="num">{{competition.event_date | moment: 'DD'}}</span> 
+                        <span class="mes">{{competition.event_date | moment: 'MMM'}}</span> 
+                        <span class="linea">|</span> 
+                        <span class="hora">{{competition.event_date | moment: 'HH:mm'}}</span> 
+					</div>
+
+					<div class="lugar wow fadeInDown">
+						<span class="icono" ><i class="fa fa-map-marker"></i></span>
+                        <span class="lugar-nombre">{{competition.place}}</span>
+                        <span class="direccion"><a href="">{{competition.location.formatted_address}}</a></span>
+					</div>
+
+					<div class="mini_gap"></div>
+					<a style="visibility: visible; animation-name: bounceInRight;" class="wow bounceInRight btn btn_principal animated entrada-1s animated" href role="button"  ng-click="participate(competition)">PARTICIPAR</a>
+					<div class="gap"></div>
+					<div class="hashtag-info wow fadeInRight">
+						<span class="icono">#</span>
+						<span>{{competition.hashtag}}</span>
+						<span class="aclaracion">fb - twitter - instagram - youtube</span>
+					</div>
+
+					<div class="fb-event wow fadeInRight">
+						<a href="">
+							<span class="icono"><i class="fa fa-facebook-square"></i></span>
+							<span>ver evento</span>
+						</a>
+					</div>
+
+					<div class="organiza wow fadeInRight">
+						<span class="o-tit">ORGANIZADO POR:</span>
+						<a href="">
+							<span>{{competition.author.name}} {{competition.author.lastname}}</span>
+						</a>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<div id="torneo_content">
+	
+	<!-- Nav tabs -->
+	<div class="tabs_lookeadas">
+	  	<ul class="nav nav-tabs panel_selector" role="tablist">
+		    <li role="presentation" class="active"><a data-target="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab"><i class="fa fa-angle-right"></i> Info</a></li>
+		    <li role="presentation"><a data-target="#tab_jugadores" aria-controls="tab_jugadores" role="tab" data-toggle="tab"><i class="icon-jugador"></i>Jugadores</a></li>
+		    <li role="presentation"><a data-target="#tab_videos" aria-controls="tab_videos" role="tab" data-toggle="tab"><i class="icon-video"></i>Videos</a></li>
+		    <li role="presentation"><a data-target="#tab_fotos" aria-controls="tab_fotos" role="tab" data-toggle="tab"><i class="fa fa-camera-retro"></i>Fotos</a></li>
+		    <li role="presentation"><a data-target="#tab_comentarios" aria-controls="tab_comentarios" role="tab" data-toggle="tab"><i class="fa fa-comment-o"></i>Comentarios</a></li>
+	  	</ul>
+
+  	</div>
+
+  	<!-- Tab panes -->
+  	<div class="tab-content contenedor_sec">
+    	<div role="tabpanel" class="tab-pane fade in active" id="tab_info">
+    		<div class="descripcion">
+				<p>
+                    {{competition.description}}
+				</p>
+			</div>
+
+			<div class="reglas">
+				<h2><small><i class="fa fa-chevron-right"></i></small> REGLAS:</h2>
+				<p>
+                    {{competition.rules}}
+				</p>
+			</div>
+
+			<div class="gap"></div>
+
+    	</div>
+
+	    <div role="tabpanel" class="tab-pane fade" id="tab_jugadores">
+			<div class="torneo_info_inside">
+		    	<div class="row">
+		    		<div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="participant in competition.users">
+		    			<div class="tarjeta_jugador">
+                            <a ng-href="/#/jugador/{{participant.id}}"><img ng-src="http://images.collab-dev.com/150x/smart/slam/profiles/{{participant.photo}}"></a>
+		                	<div class="jug_resumen">
+                                <h3>{{participant.name}} {{participant.lastname}}</h3>
+		                		<div class="data-box">
+				        			<span class="icon-box"><i class="icon-copa"></i></span>
+				        			<h4>TORNEOS</h4>
+                                    <p>+{{participant.competitions.length}}</p>
+								</div>
+								<div class="data-box">
+				        			<span class="icon-box"><i class="icon-video"></i></span>
+				        			<h4>VIDEOS</h4>
+                                    <p>+{{participant.medias.length}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+				</div>
+
+				<div class="mini_gap"></div>
+
+				<a style="visibility: visible; animation-name: bounceInRight;" class="wow bounceInRight btn eventime_button animated entrada-0s5" href="#about_menu" role="button">CARGAR MÁS..</a>
+
+			</div>
+
+	    </div>
+
+		<div role="tabpanel" class="tab-pane fade" id="tab_videos">
+		    	
+		    <div class="row">
+
+	    		<div class="col-xs-11 col-sm-6 col-lg-4" ng-repeat="video in competition.videos">
+
+	    			<div class="tarjeta_video">
+
+	    				<div class="embed-responsive embed-responsive-16by9">
+
+                            <iframe class="embed-responsive-item" ng-src="{{getYoutubeSrc(video)}}" allowfullscreen></iframe>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+			</div>
+
+	    </div>
+
+	    <div role="tabpanel" class="tab-pane fade" id="tab_fotos">...</div>
+
+	    <div role="tabpanel" class="tab-pane fade" id="tab_comentarios">...</div>
+
+  	</div>
+
+</div>
+
+

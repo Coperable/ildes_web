@@ -1,0 +1,91 @@
+<div class="gap"></div>
+
+<!-- SEC: ACTIVIDADES -->
+<div id="sec_torneosAnteriores" class="seccion fondo_gris">
+
+    <div class="contenedor_sec torneo_info_inside">
+
+	    <div class="titulo ">
+
+	      	<h2 class="sombra_gris_blanco">
+
+	        	<i class="fa fa-calendar fa-lg fa-fw"></i>Actividades
+
+	      	</h2>
+
+	    </div>
+
+	    <div class="form-group ">
+
+	    	<a class="btn btn_filtro" href="#about_menu" role="button"><i class="fa fa-sort-alpha-asc"></i></a>
+
+	    	<a class="btn btn_filtro" href="#about_menu" role="button"><i class="fa fa-sort-alpha-desc"></i></a>
+
+	    	<a class="btn btn_filtro" href="#about_menu" role="button"><i class="fa fa-clock-o"></i> Recientes</a>
+
+	    	<a class="btn btn_filtro" href="#about_menu" role="button"><i class="icon-copa"></i> Ranking</a>
+
+	    	<div class="input-group busqueda">
+
+	    		<input type="text" class="form-control" id="direccion" placeholder="BÚSQUEDA">
+
+	    		<div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+	    	</div>
+
+	    	<div class="mini_gap"></div>
+
+	    </div>
+
+    	<div class="row">
+
+    		<div class="col-xs-12 col-sm-5 col-md-4 container_tarj_act" ng-repeat="actividad in summary.competitions">
+
+                <div class="tarjeta_actividad">
+
+                    <a ng-href="/#/actividad/{{actividad.id}}">
+                        
+                        <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{actividad.cover_photo}}">
+
+                    </a>
+
+                    <div class="inner">
+                        
+                        <a ng-href="/#/actividad/{{actividad.id}}">
+
+                            <h4 class="bold">{{actividad.title}}</h4>
+
+                        </a>
+
+                        <h5>{{actividad.description|words:10}}</h5>
+
+                        <div class="etiquetas" ng-if="actividad.hashtag">
+
+                            <i class="fa fa-tag"></i>
+
+                            <span class="etiqueta">{{actividad.hashtag}}</span>
+
+                        </div>
+
+                        <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'dddd DD [de] MMMM'}} <br>
+                            <i class="fa fa-caret-right-o fa-fw"></i> <span style="font-size:14pt"><strong>{{actividad.event_date | moment: 'HH:mm'}}</strong></span></h5>
+
+                        <h5><i class="fa fa-map-marker fa-fw alineado"></i><strong class="alineado">{{actividad.place}}</strong></h5>
+                        <h5 class="segunda-ln"><i class="fa fa-angle-right-o fa-fw alineado"></i><span class="alineado"> {{actividad.location.formatted_address}}</span></h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+	
+        </div>
+
+	    <div class="mini_gap"></div>
+
+	</div>
+
+</div>
+
+
+

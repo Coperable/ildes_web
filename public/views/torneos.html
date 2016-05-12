@@ -1,0 +1,201 @@
+<div class="gap"></div>
+<div id="sec_torneoPrincipal" class="seccion fondo_claro"  ng-if="summary.next_competition">
+    <div class="contenedor_sec torneo_principal torneo_info_inside">
+	    <div class="titulo">
+	      	<h2 class="en_color_principal sombra_blanco_gris">
+	        	<i class="icon-copa"></i>Próximos Torneos
+	        	<small class="label_region">en {{summary.name}}</small>
+	      	</h2>
+	    </div>
+
+    	<div class="row">
+    		<div class="col-sm-12 col-md-5">
+    			<img ng-src="http://images.collab-dev.com/190x/smart/slam/{{summary.next_competition.cover_photo}}">
+    			<div class="ver_mas izq"><a ng-href="/#/torneo/{{summary.next_competition.id}}"><h3><i class="fa fa-caret-right"></i>ver más</h3></a></div>
+    		</div>
+
+    		<div class="col-xs-12 col-sm-6 col-md-3">
+    			<a href="">
+    				<h4 class="torneo_nombre">{{summary.next_competition.title}}</h4>
+    			</a>
+
+    			<div class="torneo_fecha">
+					<span class="icon-box" ><i class="fa fa-clock-o"></i></span>
+					<span class="num">{{summary.next_competition.event_date | moment: 'DD'}}</span> 
+					<span class="mes">{{summary.next_competition.event_date | moment: 'MMM'}}</span> 
+					<span class="linea">|</span> 
+					<span class="hora">{{summary.next_competition.event_date | moment: 'HH:mm'}}</span> 
+				</div>
+
+				<div class="torneo_lugar">
+					<span class="icon-box" ><i class="fa fa-map-marker"></i></span>
+					<span class="lugar-nombre">{{summary.next_competition.place}}</span>
+					<span class="direccion"><a href="">{{summary.next_competition.location.formatted_address}}</a></span>
+				</div>
+
+        		<div class="data-box featured">
+        			<span class="icon-box"><i class="icon-jugador"></i></span>
+        			<h4><small>JUGADORES</small>CUPOS</h4>
+        			<p><small>+{{summary.next_competition.users.length || 0}}</small>+{{summary.next_competition.users_amount - summary.next_competition.users.length}}</p>
+				</div>
+
+				<a style="visibility: visible; animation-name: bounceInRight;" class="btn btn_principal animated entrada-1s animated" href role="button" ng-click="participate(summary.next_competition)">PARTICIPAR</a>
+				<div class="mini_gap"></div>
+
+    		</div>
+
+    		<div class="col-xs-12 col-sm-6 col-md-4 torneo_descripcion">
+    			<p>
+                    {{summary.next_competition.description}}
+    			</p>
+    		</div>
+    	</div>    	
+
+    </div>
+    <div class="row ">
+
+
+        <div class="col-xs-10 col-sm-5 col-md-4" ng-repeat="next in summary.next_competitions" ng-if="next.id != summary.next_competition.id">
+            <a ng-href="/#/torneo/{{next.id}}" class="no_opacity_hover">
+            <div class="tarjeta_torneo torneo_info_inside" fecha="{{next.event_date | moment: 'DD MMM'}}">
+                <h4 class="torneo_nombre">{{next.title}}</h4>
+                <div class="torneo_resumen">
+                    <div class="data-box">
+                        <span class="icon-box"><i class="icon-jugador"></i></span>
+                        <h4>JUGADORES</h4>
+                        <p>+{{next.users.length || 0}}</p>
+                    </div>
+                    <div class="data-box">
+                        <span class="icon-box"><i class="icon-video"></i></span>
+                        <h4>VIDEOS</h4>
+                        <p>+{{next.videos.length || 0}}</p>
+                    </div>
+                    <!--div class="data-box">
+                        <span class="icon-box"><i class="fa fa-camera"></i></span>
+                        <h4>FOTOS</h4>
+                        <p>+12</p>
+                    </div>
+
+                    <div class="data-box">
+                        <span class="icon-box"><i class="fa fa-comment-o"></i></span>
+                        <h4>COMENTARIOS</h4>
+                        <p>+12</p>
+                    </div-->
+                </div>
+
+                <div class="torneo_datos">
+                    <div class="torneo_fecha">
+                        <span class="icon-box" ><i class="fa fa-clock-o"></i></span>
+                        <span class="hora">{{next.event_date | moment: 'HH:mm'}}</span>
+                    </div>
+
+                    <div class="torneo_lugar">
+                        <span class="icon-box" ><i class="fa fa-map-marker"></i></span>
+                        <span class="lugar-nombre">{{next.place}}</span>
+                        <span class="direccion">{{next.location.formatted_address}}</span>
+                    </div>
+
+                    <div class="torneo_hashtag">
+                        <span class="icon-box">#</span>
+                        <span class="aclaracion">{{next.hashtag}}</span>
+                    </div>
+                </div>
+
+                <div class="ver_mas"><h3><i class="fa fa-caret-right"></i>ver más</h3></div>
+
+            </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- SEC: TORNEOS ANTERIORES -->
+<div id="sec_torneosAnteriores" class="seccion fondo_gris">
+    <div class="contenedor_sec torneo_info_inside">
+	    <div class="titulo ">
+	      	<h2 class="sombra_gris_blanco">
+	        	<i class="icon-copa"></i>Torneos Anteriores
+	        	<small class="label_region">en {{summary.name}}</small>
+	      	</h2>
+	    </div>
+
+	    <div class="form-group ">
+	    	<a class="btn eventime_button btn_filtro" href="#about_menu" role="button"><i class="fa fa-sort-alpha-asc"></i></a>
+	    	<a class="btn eventime_button btn_filtro" href="#about_menu" role="button"><i class="fa fa-sort-alpha-desc"></i></a>
+	    	<a class="btn eventime_button btn_filtro" href="#about_menu" role="button"><i class="fa fa-clock-o"></i> Recientes</a>
+	    	<a class="btn eventime_button btn_filtro" href="#about_menu" role="button"><i class="icon-copa"></i> Ranking</a>
+	    	<div class="input-group busqueda">
+	    		<input type="text" class="form-control" id="direccion" placeholder="BÚSQUEDA">
+	    		<div class="input-group-addon"><i class="fa fa-search"></i></div>
+	    	</div>
+
+	    	<div class="mini_gap"></div>
+
+	    </div>
+
+    	<div class="row">
+    		<div class="col-xs-10 col-sm-5 col-md-4" ng-repeat="past in summary.past_competitions">
+    			<a ng-href="/#/torneo/{{past.id}}" class="no_opacity_hover">
+                    <div class="tarjeta_torneo torneo_info_inside" fecha="{{past.event_date | moment: 'DD MMM'}}">
+                        <h4 class="torneo_nombre">{{past.title}}</h4>
+                        <div class="torneo_resumen">
+                            <div class="data-box">
+                                <span class="icon-box"><i class="icon-jugador"></i></span>
+                                <h4>JUGADORES</h4>
+                                <p>+{{past.users.length || 0}}</p>
+                            </div>
+                            <div class="data-box">
+                                <span class="icon-box"><i class="icon-video"></i></span>
+                                <h4>VIDEOS</h4>
+                                <p>+{{past.videos.length || 0}}</p>
+                            </div>
+                            <!--div class="data-box">
+                                <span class="icon-box"><i class="fa fa-camera"></i></span>
+                                <h4>FOTOS</h4>
+                                <p>+12</p>
+                            </div>
+
+                            <div class="data-box">
+                                <span class="icon-box"><i class="fa fa-comment-o"></i></span>
+                                <h4>COMENTARIOS</h4>
+                                <p>+12</p>
+                            </div-->
+                        </div>
+
+                        <div class="torneo_datos">
+                            <div class="torneo_fecha">
+                                <span class="icon-box" ><i class="fa fa-clock-o"></i></span>
+                                <span class="hora">{{past.event_date | moment: 'HH:mm'}}</span>
+                            </div>
+
+                            <div class="torneo_lugar">
+                                <span class="icon-box" ><i class="fa fa-map-marker"></i></span>
+                                <span class="lugar-nombre">{{past.place}}</span>
+                                <span class="direccion">{{past.location.formatted_address}}</span>
+                            </div>
+
+                            <div class="torneo_hashtag">
+                                <span class="icon-box">#</span>
+                                <span class="aclaracion">{{past.hashtag}}</span>
+                            </div>
+                        </div>
+
+                        <div class="ver_mas"><h3><i class="fa fa-caret-right"></i>ver más</h3></div>
+
+                    </div>
+            	</a>
+            </div>
+	
+        </div>
+
+	    <div class="mini_gap"></div>
+
+	</div>
+
+</div>
+
+
+

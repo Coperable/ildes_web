@@ -1,0 +1,99 @@
+<div class="gap"></div>
+
+<!-- SEC: ACTIVIDADES -->
+<div id="sec_torneosAnteriores" class="seccion fondo_gris">
+
+    <div class="contenedor_sec torneo_info_inside">
+
+	    <div class="titulo ">
+
+	      	<h2 class="sombra_gris_blanco">
+
+	        	<i class="fa fa-calendar fa-lg fa-fw"></i>Actividades
+
+	      	</h2>
+
+	    </div>
+
+	    <div class="form-group ">
+
+	    	<a class="btn btn_filtro" href role="button" ng-click="direction(false)"><i class="fa fa-sort-alpha-asc"></i></a>
+
+	    	<a class="btn btn_filtro" href role="button" ng-click="direction(true)"><i class="fa fa-sort-alpha-desc"></i></a>
+
+
+	    	<div class="input-group busqueda">
+
+	    		<input type="text" class="form-control" placeholder="BÚSQUEDA"  ng-model="search_term" ng-enter="doSearch()">
+
+	    		<div class="input-group-addon" ng-click="doSearch()"><i class="fa fa-search"></i></div>
+
+	    	</div>
+
+	    	<div class="mini_gap"></div>
+
+	    </div>
+	    <div class="form-group ">
+	    	<a class="btn btn_filtro" ng-class="{'active': !current_espacio}" href ng-click="doFilter(false)" role="button"> Todos los espacios</a>
+	    	<a class="btn btn_filtro" ng-class="{'active': espacio.code == current_espacio}" href ng-click="doFilter(espacio)" role="button" ng-repeat="espacio in espacios" > {{espacio.name}}</a>
+	    </div>
+	    <div class="form-group ">
+	    	<a class="btn btn_filtro" ng-class="{'active': !current_fecha }" href ng-click="doFilterFecha(false)" role="button"> Todas las fechas</a>
+	    	<a class="btn btn_filtro" ng-class="{'active': fecha.code == current_fecha}" href ng-click="doFilterFecha(fecha)" role="button" ng-repeat="fecha in fechas" > {{fecha.formatted}}</a>
+	    </div>
+
+    	<div class="row">
+
+            <div class="col-xs-12 col-sm-5 col-md-4 container_tarj_act" ng-repeat="actividad in competitions| orderBy:predicate:reverse">
+
+                <div class="tarjeta_actividad">
+
+                    <a ng-href="/#/actividad/{{actividad.id}}">
+                        
+                        <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{actividad.cover_photo}}">
+
+                    </a>
+
+                    <div class="inner">
+                        
+                        <a ng-href="/#/actividad/{{actividad.id}}">
+
+                            <h4 class="bold">{{actividad.title}}</h4>
+
+                        </a>
+
+                        <h5>{{actividad.description|words:10}}</h5>
+
+                        <div class="etiquetas" ng-if="actividad.hashtag">
+
+                            <i class="fa fa-tag"></i>
+
+                            <span class="etiqueta">{{actividad.hashtag}}</span>
+
+                        </div>
+
+                        <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'dddd DD [de] MMMM'}} <br>
+                            <i class="fa fa-caret-right-o fa-fw"></i> <span style="font-size:14pt"><strong>{{actividad.event_date | moment: 'HH:mm'}}</strong></span></h5>
+
+                        <h5><i class="fa fa-map-marker fa-fw alineado"></i><strong class="alineado">{{actividad.place}}</strong></h5>
+                        <h5 class="segunda-ln"><i class="fa fa-angle-right-o fa-fw alineado"></i><span class="alineado"> {{actividad.location.formatted_address}}</span></h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+	
+        </div>
+
+        <h4><strong><a href="" class="link_simple"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a></strong></h4>
+
+	    <div class="mini_gap"></div>
+
+	</div>
+
+</div>
+
+
+

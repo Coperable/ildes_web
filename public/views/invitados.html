@@ -1,0 +1,111 @@
+<div class="gap"></div>
+
+<div id="sec_jugadores" class="seccion fondo_gris">
+
+    <div class="contenedor_sec torneo_info_inside">
+
+	    <div class="titulo">
+
+	      	<h2 class="sombra_gris_blanco">
+	        	
+	        	<i class="fa fa-lg fa-fw fa-users"></i>INVITADOS
+	      	
+	      	</h2>
+	    
+	    </div>
+
+	    <div class="mini_gap"></div>
+
+	    <!-- FILTROS: -->
+	    <div class="form-group">
+	    	
+	    	<a class="btn btn_filtro" href role="button" ng-click="direction(false)"><i class="fa fa-sort-alpha-asc"></i></a>
+
+	    	<a class="btn btn_filtro" href role="button" ng-click="direction(true)"><i class="fa fa-sort-alpha-desc"></i></a>
+
+	    	<div class="input-group busqueda">
+	    		<input type="text" ng-model="search_term" class="form-control" id="direccion" placeholder="BÚSQUEDA" ng-enter="doSearch()">
+	    		<div class="input-group-addon" ng-click="doSearch()"><i class="fa fa-search"></i></div>
+	    	</div>
+
+	    </div>
+
+    	<div class="row">
+
+    		<div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="invitado in participants| orderBy:predicate:reverse">
+
+    			<div class="tarjeta_jugador wow fadeInLeft">
+
+    				<a  href class="link2modal"  data-toggle="modal"  data-target="#invitado-{{invitado.id}}">
+
+    					<img ng-src="http://images.collab-dev.com/300x320/smart/slam/{{invitado.cover_photo}}">
+
+    				</a>
+
+                	<div class="jug_resumen">
+
+                		<a href class="link2modal" data-toggle="modal"  data-target="#invitado-{{invitado.id}}">
+
+                			<h4 class="bold">{{invitado.name}} {{invitado.lastname}}</h4>
+
+                		</a>
+
+                		<h5>{{invitado.place}}</h5>
+
+                		<p>{{invitado.about|words:10}}</p>
+                		
+					</div>
+
+				</div>
+
+				<!-- Modal -->
+
+				<div class="modal fade" id="invitado-{{invitado.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">
+									<strong>{{invitado.name}} {{invitado.lastname}}</strong> | {{invitado.place}}
+								</h4>
+							</div>
+							<div class="modal-body">
+                                <img ng-src="http://images.collab-dev.com/300x320/smart/slam/{{invitado.cover_photo}}">
+								<div class="mini_gap"></div>
+                                <p ng-bind-html="newlines(invitado.about)"></p>
+								<p class="links" ng-if="invitado.google">
+									<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" ng-href="{{invitado.google}}" target="_blank"><strong>{{invitado.google}}</strong></a>
+								</p>
+								<p class="links">
+
+								<!--
+									<a href="https://twitter.com/{{invitado.twitter}}" class="link_simple fa fa-2x fa-facebook-square" target="_blank" ng-if="invitado.twitter"> </a> &nbsp;
+							        <a href="https://www.facebook.com/{{invitado.facebook}}" class="link_simple fa fa-2x fa-twitter-square" target="_blank" ng-if="invitado.facebook"> </a> &nbsp;
+									<a href="https://www.instagram.com/{{invitado.instagram}}" class="link_simple fa fa-2x fa-instagram-square" target="_blank" ng-if="invitado.instagram"> </a> -->
+						        </p>
+					        </div>
+
+					        <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+					    	</div>
+						</div>
+					</div>
+				</div>
+            </div>
+
+
+
+
+
+		</div>
+
+		<div class="mini_gap"></div>
+
+		<!--a style="visibility: visible; animation-name: bounceInRight;" class="wow bounceInRight btn btn_fondo_claro eventime_button animated entrada-0s5" href="#about_menu" role="button">CARGAR MÁS..</a-->
+
+		<div class="mini_gap"></div>
+
+	</div>
+
+</div>
+
