@@ -6,20 +6,25 @@ Version:    1.2
 Last change:    3 apr 2015
 Assigned to:    http://themeforest.net/user/chaykovskiy
 Primary use:    Eventime HTML Template 
+-------------------------------------------------------------------
+
+    COLOR PRINCIPAL: #75c7c5 
+    COLOR RESALTADO: #e65a3f
+
 -------------------------------------------------------------------*/
 
+/* PARA FORZAR EL COLOR PRINCIPAL */
+.en_color_principal {
 
+    color: #75c7c5 !important;
+}
 
+.color_principal_faded {
 
+    color: #d9f0ef; 
+}
 
-/*!------------------------------ Main color of template #e65a3f ------------------------------*/
-
-.navbar-nav>.active>a,
-
-.navbar ul li a.active,
-
-.navbar-nav>li>a:hover,
-
+/* ----------------- LINKS  -------------------- */
 .description #clock,
 
 .arrow_right:hover,
@@ -38,7 +43,6 @@ a.navbar-brand:hover,
 
 .navbar_bg_dark .active a,
 
-
 .texticon, .nav .open>a,
 
 .count,
@@ -51,12 +55,66 @@ a.navbar-brand:hover,
 
 .contact a, .entry-meta span a:hover,
 
-.copyright span{
+.copyright span, 
 
-    color: #e65a3f;
+.label_region {
+
+    color: #75c7c5;
 
 }
 
+a.link_simple:hover {
+
+    color: #75c7c5; !important;
+}
+
+.navbar,
+
+.navbar a {
+
+    color: #75c7c5; 
+}
+
+a,
+
+.first_title,
+
+.panel a,
+
+.reservation,
+
+footer,
+
+.navbar_bg .active a, .blog_button, 
+
+.schedule_reservation,
+
+.panel-collapse p b {
+
+    color: #75c7c5;
+
+}
+
+.contact_icon:hover {
+
+    color: #fff;
+}
+
+
+/* COLOR DE LINKS EN HOVER */
+a:hover, 
+
+.navbar-nav>.active>a,
+
+.navbar ul li a.active,
+
+.navbar-nav>li>a:hover {
+
+    color: #e65a3f;
+}
+
+
+/* ----------------- BOTONES  -------------------- */
 
 .eventime_button::before, .dropdown-menu li a:hover,
 
@@ -64,7 +122,26 @@ a.navbar-brand:hover,
 
 .contact_icon:hover  {
    
-    background: #e65a3f;
+    background: #75c7c5;
+
+}
+
+
+.btn_principal {
+
+    background-color: #75c7c5;
+
+    color: #fff;
+
+    border-color: #fff;
+
+}
+
+.btn_principal:hover {
+
+    background-color: #e65a3f;
+
+    color: #fff;
 
 }
 
@@ -75,8 +152,6 @@ a.navbar-brand:hover,
 .first_line,
 
 #sh_carousel .carousel-indicators .active,
-
-.tabs_about .active a,
 
 .tabs_about .graybtn:hover,
 
@@ -94,13 +169,88 @@ a.navbar-brand:hover,
 
 figure.eventime_img figcaption::before,
 
-.eventime_modal .contact_icon:hover,
+.eventime_modal,
 
-.center_line {
+.center_line, 
 
-    border-color: #e65a3f;
+.label_region {
+
+    border-color: #75c7c5;
 
 }
+
+
+
+
+/* ----------------- SECCIÓN ABOUT  -------------------- */
+
+.menu_tabs, 
+
+#about_menu .borde_superior {
+
+    background-color: #75c7c5;
+}
+
+.tabs_about a {
+
+    color: #fff;
+}
+
+.tabs_about .active a {
+
+    border: none;
+    
+    background-color: #d9f0ef;
+    
+    color: #75c7c5;
+}
+
+
+.about_columns .list {
+
+    color: #000;
+
+}
+
+.about_columns .list h4 {
+
+    color: #000;
+
+}
+
+
+
+/* ----------------- SECCIÓN EQUIPO  -------------------- */
+
+#sec_equipo .titulo, 
+
+#sec_equipo .borde_superior {
+
+    background-color: #9ced97; 
+}
+
+
+/* ----------------- SECCIÓN PROYECTOS  -------------------- */
+
+#sec_proyectos .titulo, 
+
+#sec_proyectos .borde_superior {
+
+    background-color: #ffd44c; 
+}
+
+/* ----------------- SECCIÓN CONTACTO  -------------------- */
+
+#sec_contacto .titulo, 
+
+#sec_contacto .borde_superior {
+
+    background-color: #808080; 
+}
+
+
+
+/* ------------------------------------------------------ */
 
 /* Gradients */
 
@@ -158,11 +308,6 @@ footer,
 
 
 
-
-.navbar,
-
-.navbar a,
-
 .description h2,
 
 .description h3,
@@ -174,8 +319,6 @@ footer,
 .tab-content,
 
 .eventime_button,
-
-.tabs_about .active a,
 
 .mask .first_title,
 
@@ -241,32 +384,11 @@ footer,
 
 
 
+.tab-content h4{
 
-a,
-
-a:hover,
-
-.first_title,
-
-.panel a,
-
-.reservation,
-
-.reservation_button,
-
-.contact_icon:hover,
-
-footer,
-
-.navbar_bg .active a, .blog_button, 
-
-.schedule_reservation,
-
-.panel-collapse p b {
-
-    color: #000;
-
+    color: @color-dark !important;
 }
+
 
 .eventime_button:hover {
 

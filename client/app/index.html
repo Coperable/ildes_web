@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
 
-    <title>COMUNES</title>
+    <title>I.L.D.E.S. | Soluciones Inteligentes</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -74,7 +74,7 @@
                 
                     <a ng-href="/#/">
 
-                        <img src="/images/LOGO_COMUNES_01.png">
+                        <img src="/images/LOGO-ildes-nav.png">
 
                     </a>
 
@@ -87,38 +87,26 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a href ng-click="goPresentacion()">
-                            <i class="fa fa-certificate"></i> PRESENTACIÓN
+                        <a href ng-click="#about_menu">
+                            SOMOS
                         </a>
                     </li>
 
                     <li>
-                        <a href="/#/invitados">
-                            <i class="fa fa-users"></i> INVITADOS
+                        <a href="#sec_equipo">
+                            EQUIPO
                         </a>
                     </li>
 
                     <li>
-                        <a href="/#/actividades">
-                            <i class="fa fa-calendar"></i> PROGRAMACIÓN
+                        <a href="#sec_proyectos">
+                            PROYECTOS
                         </a>
                     </li>
 
                     <li>
-                        <a  href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank">
-                            <i class="fa fa-pencil"></i> INSCRIPCIÓN
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href ng-click="goApoyos()">
-                            <i class="fa fa-thumbs-up"></i> APOYOS
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href ng-click="goContacto()">
-                            <i class="fa fa-user-plus"></i> Contacto
+                        <a href="#sec_contacto">
+                            CONTACTO
                         </a>
                     </li>
 
@@ -126,6 +114,7 @@
                         <a  href="http://facebook.com/minka" target="_blank">
                             <i class="fa fa-facebook"></i>
                         </a>
+                    
                     </li>
                     <li>
                         <a  href="http://facebook.com/minka" target="_blank">
@@ -142,44 +131,42 @@
         <!--/.nav-collapse -->
     </nav>
 
+    <!-- SLIDER -->
     <header id="home_slider_main" class="carousel slide"  ng-show="home_page" data-ng-controller="slider-controller">
         <div class="carousel-inner">
             
             <div class="item active ">
                 
-                <div class="fill" style="background-image:url('images/FONDO-LOGOS.png');"></div>
+                <div class="fill" style="background-image:url('images/IMG-HEADER10.jpg');"></div>
 
-                <div class="fill" style="background-color: #2fc9db;"></div>
-
-                <div class="logo-principal">
-
-                    <img src="images/LOGO-COMUNES-animated.gif" class="wow fadeIn entrada-1s">
-                
-                </div>
+                <div class="fill_mask" style="background-color: rgba(117, 199, 197, 0.3);"></div>
                 
                 <div class="fill_mask">
 
                     <div class="description ">
 
-                        <!--h2 class="details inicial wow fadeInDown entrada-1s5">
+                        <h2 class="details inicial wow fadeInDown">
 
-                            <img class="logo-principal" src="images/LOGO-COMUNES-animated.gif">
+                            Título
                         
                         </h2>
+
+                        <h3 class="details inicial wow fadeInDown">
+
+                            Subtítulo
+
+                        </h3>
                         
-                        <!--div class="details wow fadeInUp">
+                        <div class="details wow fadeInUp">
                         
                             <p>
-                                Argentina
+                                Texto adicional
                             </p>
                         
-                        </div-->
+                        </div>
                         <div class="buttons ">
-                            <a class="btn eventime_button" href ng-click="scrollTo('acerca_de_posicion')" role="button">
+                            <a class="btn btn_principal" href ng-click="scrollTo('acerca_de_posicion')" role="button">
                                 Conocer más </a>
-                            <a class="btn eventime_button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank" role="button">
-                                Registrate 
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -207,9 +194,9 @@
                         
                         </div-->
                         <div class="buttons ">
-                            <a class="btn eventime_button" href ng-click="scrollTo('acerca_de_posicion')" role="button">
+                            <a class="btn btn_principal" href ng-click="scrollTo('acerca_de_posicion')" role="button">
                                 Conocer más </a>
-                            <a class="btn eventime_button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank" role="button">
+                            <a class="btn btn_principal" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank" role="button">
                                 Registrate 
                             </a>
                         </div>
@@ -239,10 +226,10 @@
                             </p>
                         </div>
                         <div class="buttons ">
-                            <a ng-if="slider.about_action == 1" class="wow fadeInLeft btn eventime_button" href="#acerca_de_posicion" role="button">
+                            <a ng-if="slider.about_action == 1" class="wow fadeInLeftbtn btn_principal" href="#acerca_de_posicion" role="button">
                                 Conocer más 
                             </a>
-                            <a ng-if="slider.signup_action == 1" class="wow fadeInRight btn eventime_button" href="#planilla-registro" role="button">
+                            <a ng-if="slider.signup_action == 1" class="wow fadeInRight btn btn_principal" href="#planilla-registro" role="button">
                                 Registrate 
                             </a>
                         </div>
@@ -260,7 +247,7 @@
                         </div>
                         <h3>{{slider.subtitle}}</h3>
                         <div class="buttons">
-                            <a ng-if="slider.players_action == 1" class="wow fadeInUp btn eventime_button" href="#sec_jugadores" role="button">
+                            <a ng-if="slider.players_action == 1" class="wow fadeInUp btn btn_principal" href="#sec_jugadores" role="button">
                                 Jugadores! 
                             </a>
                         </div>
@@ -278,10 +265,10 @@
                             </p>
                         </div>
                         <div class="buttons ">
-                            <a ng-if="slider.about_action == 1" class="wow fadeInLeft btn eventime_button" href="#about_menu" role="button">
+                            <a ng-if="slider.about_action == 1" class="wow fadeInLeft btn btn_principal" href="#about_menu" role="button">
                                 Conocer más 
                             </a>
-                            <a ng-if="slider.signup_action == 1" class="wow fadeInRight btn eventime_button" href="#planilla-registro" role="button">
+                            <a ng-if="slider.signup_action == 1" class="wow fadeInRight btn btn_principal" href="#planilla-registro" role="button">
                                 Registrate 
                             </a>
                         </div>
@@ -311,127 +298,7 @@
 
         <div class="footer">
 
-            <div class="hidden-xs">
-
-                <div class="logos row v-center">
-
-                    <div class="col-xs-2 col-md-2"> 
-
-                        <img class="width_80" src="/images/LOGO_COMUNES_02.png">
-
-                    </div>
-
-                    <div class="visible-lg-block col-lg-1"> 
-
-                    </div>
-
-                    <div class="col-xs-1 col-md-1">
-
-                        <img class="width_80" src="/images/LOGO-goethe-blanco.png">
-
-                    </div>
-
-                    <div class="col-xs-1 col-md-1">
-
-                        <img src="/images/LOGO-Minka-blanco.png">
-
-                    </div>
-
-                    <div class="col-xs-2 col-md-2 col-lg-1">
-
-                        <img class="width_80" src="/images/LOGO-planC-blanco.png">
-
-                    </div>
-
-                    <div class="col-xs-1 col-md-1">
-
-                        <img src="/images/LOGO-cSenda-blanco.png">
-
-                    </div>
-
-                    <div class="col-xs-2 col-md-2">
-
-                        <img class="width_80" src="/images/LOGO-CCC_blanco.png">
-
-                    </div>
-
-                    <div class="col-xs-1 col-md-1">
-
-                    </div>
-
-                    <div class="col-xs-2 col-md-2 wow fadeInRight entrada-1s">
-
-                        <a target="_blank" href="coperable.org"><img class="coperable" src="/images/LOGO-coperable-blanco.png"></a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="visible-xs-block">
-
-                <div class="row logos">
-
-                    <div class="col-xs-4"></div>
-
-                    <div class="col-xs-4">
-
-                        <img class="width_60" src="/images/LOGO_COMUNES_02.png">
-
-                    </div>
-
-                    <div class="col-xs-4"></div>
-
-                </div>
-
-                <div class="mini_gap"></div>
-
-                <div class="logos row v-center">
-
-                    <div class="col-xs-2">
-
-                        <img class="width_80" src="/images/LOGO-goethe-blanco.png">
-
-                    </div>
-
-                    <div class="col-xs-2">
-
-                        <img src="/images/LOGO-Minka-blanco.png">
-
-                    </div>
-
-                    <div class="col-xs-3">
-
-                        <img class="width_80" src="/images/LOGO-planC-blanco.png">
-
-                    </div>
-
-                    <div class="col-xs-2">
-
-                        <img src="/images/LOGO-cSenda-blanco.png">
-
-                    </div>
-
-                    <div class="col-xs-3">
-
-                        <img class="width_80" src="/images/LOGO-CCC_blanco.png">
-
-                    </div>
-
-                </div>
-
-                <div class="row logos">
-
-                    <div class="col-xs-4">
-
-                        <a target="_blank" href="coperable.org"><img class="coperable" src="/images/LOGO-coperable-blanco.png"></a>
-
-                    </div>
-
-                </div>
-
-            </div>
+            <h5 class="copyright">I.L.D.E.S - Todos los derechos reservados..</h5>
 
             <div class="gap"></div>
 
@@ -451,6 +318,14 @@
 
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">
+        
+        $('.carousel_ejemplo02').carousel({
+          interval: 2000
+        })
+        
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
