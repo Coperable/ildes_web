@@ -161,96 +161,239 @@
 
 	<div class="mini_gap"></div>
 
-	<div class="row width_90">
+	<div id="carousel_EQUIPO" class="carousel slide" data-ride="carousel">
 
-		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+		<!-- Indicators 
+		<ol class="carousel-indicators">
+			<li data-target="#carousel_EQUIPO" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel_EQUIPO" data-slide-to="1"></li>
+			<li data-target="#carousel_EQUIPO" data-slide-to="2"></li>
+		</ol> -->
 
-            <div class="tarjeta_colaborador wow fadeInRightBig">
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
 
-                <div class="image_box">
+			<div class="item active">
 
-                    <a href="" data-toggle="modal" data-target="#invitado-01">
+				<!-- Hola Leo! 
 
-                        <img src="/images/IMG-USR01.jpg"/>
-                        
-                    </a>
-                    
-                </div>
+					A partir de acá hay un código que está replicado varias veces.. 
+					Básicamente, el carousel tiene varios items, y dentro de cada item va un número de miembros, 
+					que depende del tamaño de la pantalla. 
 
-                <!-- Display the Title as a link to the Post's permalink. -->
-                <h4>Manuel Gómez</h4>
+						Large devices  - Desktops (≥1200px) = 6 MIEMBROS
+						Medium devices - Desktops (≥992px)  = 4 MIEMBROS
+						Small devices  - Tablets  (≥768px)  = 3 MIEMBROS
+						Xsmall devices - Phones   (<768px)  = 1 MIEMBRO
 
-            </div>
+					Por eso lo separé en varios bloques de código, cada bloque es visible solamente para un tamaño específico. 
+					Lo único que cambia es la cantidad de MIEMBROS que van dentro del ítem (aunque estoy poniendo un solo miembro para propósitos ilustrativos).. 
+					Si querés simplificar este código con esas programaciones locas que hacés con Angular, bienvenido! 
 
-        </div>
-                
-        <!-- Modal -->
-        <div class="modal fade" id="invitado-01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					El primer item lleva la clase "active", los demás items no. 
 
-			<div class="modal-dialog" role="document">
+					- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+				-->
 
-				<div class="modal-content">
+				<!-- Large devices  - Desktops (≥1200px) = 6 MIEMBROS -->
+				<div class="row width_80 visible-lg-block">
+					
+					<div class="col-lg-2">
 
-					<div class="modal-header">
+			            <div class="tarjeta_colaborador wow fadeInRightBig">
 
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                <div class="image_box">
 
-							<span aria-hidden="true">&times;</span>
+			                    <a href="" data-toggle="modal" data-target="#miembro_01">
 
-						</button>
+			                        <img src="/images/IMG-USR01.jpg"/>
+			                        
+			                    </a>
+			                    
+			                </div>
 
-						<h4 class="modal-title" id="myModalLabel">
+			                <!-- Display the Title as a link to the Post's permalink. -->
+			                <h4>Manuel Gómez</h4>
 
-							<strong>Manuel Gómez</strong> | Director
+			            </div>
 
-						</h4>
+			        </div>
 
-					</div>
+				</div>
 
-					<div class="modal-body">
+				<!-- Medium devices - Desktops (≥992px)  = 4 MIEMBROS -->
+				<div class="row width_80 visible-md-block">
+					
+					<div class="col-md-3">
 
-						<img ng-src="/images/IMG-USR01.jpg">
+			            <div class="tarjeta_colaborador wow fadeInRightBig">
 
-						<div class="mini_gap"></div>
+			                <div class="image_box">
 
-					    <p>
+			                    <a href="" data-toggle="modal" data-target="#miembro_01">
 
-					    	Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini. 
+			                        <img src="/images/IMG-USR01.jpg"/>
+			                        
+			                    </a>
+			                    
+			                </div>
 
-					    </p>
+			                <!-- Display the Title as a link to the Post's permalink. -->
+			                <h4>Manuel Gómez</h4>
+
+			            </div>
+
+			        </div>
+
+				</div>
+
+				<!-- Small devices  - Tablets  (≥768px)  = 3 MIEMBROS -->
+				<div class="row width_80 visible-sm-block">
+					
+					<div class="col-sm-4">
+
+			            <div class="tarjeta_colaborador wow fadeInRightBig">
+
+			                <div class="image_box">
+
+			                    <a href="" data-toggle="modal" data-target="#miembro_01">
+
+			                        <img src="/images/IMG-USR01.jpg"/>
+			                        
+			                    </a>
+			                    
+			                </div>
+
+			                <!-- Display the Title as a link to the Post's permalink. -->
+			                <h4>Manuel Gómez</h4>
+
+			            </div>
+
+			        </div>
+
+				</div>
+
+				<!-- Xsmall devices - Phones   (<768px)  = 1 MIEMBRO -->
+				<div class="row width_80 visible-xs-block">
+					
+					<div class="col-xs-6">
+
+			            <div class="tarjeta_colaborador wow fadeInRightBig">
+
+			                <div class="image_box">
+
+			                    <a href="" data-toggle="modal" data-target="#miembro_01">
+
+			                        <img src="/images/IMG-USR01.jpg"/>
+			                        
+			                    </a>
+			                    
+			                </div>
+
+			                <!-- Display the Title as a link to the Post's permalink. -->
+			                <h4>Manuel Gómez</h4>
+
+			            </div>
+
+			        </div>
+
+				</div>
+			
+			</div>
+		
+		</div>
+
+		<!-- Controls -->
+		<a class="left left_arrow" data-target="#carousel_EQUIPO" role="button" data-slide="prev">
+				
+			<!-- span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span -->
+			<svg width="26px" height="48">
+            	<polygon points="3.3,24.5 25.5,2.3 24,0.8 0.3,24.5 24,48.2 25.5,46.7"></polygon>
+        	</svg>
+			
+			<span class="sr-only">Previous</span>
+		</a>
+		
+		<a class="right right_arrow" data-target="#carousel_EQUIPO" role="button" data-slide="next">
+			
+			<!-- span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span -->
+			<svg width="26px" height="48">
+                <polygon points="22.5,24.5 0.3,2.3 1.8,0.8 25.5,24.5 1.8,48.2 0.3,46.7"></polygon>
+            </svg>
+			
+			<span class="sr-only">Next</span>
+		
+		</a>
+		
+	</div>
+
+	<!-- ACÁ SE ARMA UN MODAL PARA CADA MIEMBRO -->
+
+    <!-- Modal miembro_01 -->
+	<div class="modal fade" id="miembro_01" tabindex="-1" role="dialog" aria-labelledby="miembro_01_Label">
+
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+						<span aria-hidden="true">&times;</span>
+
+					</button>
+
+					<h4 class="modal-title" id="miembro_01_Label">
+
+						<strong>Manuel Gómez</strong> | Director
+
+					</h4>
+
+				</div>
+
+				<div class="modal-body">
+
+					<img ng-src="/images/IMG-USR01.jpg">
+
+					<div class="mini_gap"></div>
+
+				    <p>
+
+				    	Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini. 
+
+				    </p>
+					
+					<p class="links" ng-if="invitado.google">
 						
-						<p class="links" ng-if="invitado.google">
-							
-							<i class="fa fa-caret-right fa-fw"></i>
-							
-							<a class="link_simple" ng-href="" target="_blank">
-
-								<strong>LINK</strong>
-							</a>
-
-						</p>
+						<i class="fa fa-caret-right fa-fw"></i>
 						
-						<p class="links">
+						<a class="link_simple" ng-href="" target="_blank">
+
+							<strong>LINK</strong>
+						</a>
+
+					</p>
+					
+					<p class="links">
 
 						<!--
 						<a href="https://twitter.com/{{invitado.twitter}}" class="link_simple fa fa-2x fa-facebook-square" target="_blank" ng-if="invitado.twitter"> </a> &nbsp;
 						<a href="https://www.facebook.com/{{invitado.facebook}}" class="link_simple fa fa-2x fa-twitter-square" target="_blank" ng-if="invitado.facebook"> </a> &nbsp;
 						<a href="https://www.instagram.com/{{invitado.instagram}}" class="link_simple fa fa-2x fa-instagram-square" target="_blank" ng-if="invitado.instagram"> </a>-->
-						
-						</p>
-
-					</div>
-
-					<div class="modal-footer">
-
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 					
-					</div>
+					</p>
+					
+				</div>
+
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
 				</div>
-		
+
 			</div>
-		
+
 		</div>
 
 	</div>
@@ -280,7 +423,7 @@
 
 				<div class="image_box">
 
-					<a href="">
+					<a href="" data-toggle="modal" data-target="#proyecto_01">
 
 						<img ng-src="/images/LOGO-STD.png">
 
@@ -290,7 +433,11 @@
 
 				<div class="info_box">
 
-					<a href=""><h4>Título de Proyecto</h4></a>
+					<a href="" data-toggle="modal" data-target="#proyecto_01">
+
+						<h4>Título de Proyecto</h4>
+
+					</a>
 
 					<div class="etiquetas">
 
@@ -411,6 +558,69 @@
 					<!--h5>{{actividad.description|words:10}}</h5-->
 
 					<p>Wulcon es una organización dedicada a la sustentabilidad energétiva y mitigación del cambio climático.</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- ACÁ SE ARMA UN MODAL PARA CADA PROYECTO -->
+
+	<!-- MODAL proyecto_01 -->
+	<div class="modal fade" id="proyecto_01" tabindex="-1" role="dialog" aria-labelledby="proyecto_01_Label">
+
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+						<span aria-hidden="true">&times;</span>
+
+					</button>
+
+					<h4 class="modal-title" id="proyecto_01_Label">
+
+						Título de Proyecto
+
+					</h4>
+
+				</div>
+
+				<div class="modal-body">
+
+					<img src="/images/LOGO-STD.png">
+
+					<div class="mini_gap"></div>
+
+				    <p>
+
+				    	Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini. 
+
+				    </p>
+					
+					<p class="links">
+						
+						<i class="fa fa-caret-right fa-fw"></i>
+						
+						<a class="link_simple" href="" target="_blank">
+
+							<strong>LINK</strong>
+						</a>
+
+					</p>
+					
+				</div>
+
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
 				</div>
 

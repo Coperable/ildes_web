@@ -87,37 +87,37 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a href ng-click="#about_menu">
+                        <a data-target="#about_menu">
                             SOMOS
                         </a>
                     </li>
 
                     <li>
-                        <a href="#sec_equipo">
+                        <a data-target="#sec_equipo">
                             EQUIPO
                         </a>
                     </li>
 
                     <li>
-                        <a href="#sec_proyectos">
+                        <a data-target="#sec_proyectos">
                             PROYECTOS
                         </a>
                     </li>
 
                     <li>
-                        <a href="#sec_contacto">
+                        <a data-target="#sec_contacto">
                             CONTACTO
                         </a>
                     </li>
 
                     <li>
-                        <a  href="http://facebook.com/minka" target="_blank">
+                        <a data-target="http://facebook.com/minka" target="_blank">
                             <i class="fa fa-facebook"></i>
                         </a>
                     
                     </li>
                     <li>
-                        <a  href="http://facebook.com/minka" target="_blank">
+                        <a data-target="http://facebook.com/minka" target="_blank">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </li>
@@ -320,13 +320,22 @@
        ga('send', 'pageview');
     </script>
 
+
+    <!-- Esto es para que el carousel de EQUIPO no se cambie automáticamente 
+         Pero me está dando ERROR por el $
+         ???
+    -->
     <script type="text/javascript">
         
-        $('.carousel_ejemplo02').carousel({
-          interval: 2000
-        })
-        
-    </script>
+        $(document).ready(function() {
+            
+            $('.carousel_EQUIPO').carousel({
+                
+                interval: 1200
+            })
+        });
+    
+    </script> 
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
